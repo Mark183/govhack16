@@ -1,0 +1,102 @@
+.results {
+
+	&_hero {
+		background-color: $primary-color;
+		height: 250px;
+	}
+
+	&_results {
+		color: $primary-color;
+
+		span {
+			color: $dark-gray;
+		}
+
+		@include breakpoint(medium) {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		&:last-child {
+
+			@include breakpoint(medium) {
+				margin-left: 60px;
+			}
+		}
+	}
+
+	&_list {
+		background: $white;
+		@include boxshadow();
+		height: 500px;
+		overflow-y: scroll;
+
+		@include breakpoint(medium) {
+			display: block !important;
+		}
+
+		.latest_reviews--block {
+			width: 100%;
+		}
+
+		.latest_reviews--item {
+			cursor: pointer;
+			@include transition();
+
+			&:hover {
+				background: lighten($primary-color, 50%);
+			}
+		}
+
+		&--item {
+			padding: 10px 15px;
+			border-bottom: 1px solid #f5f5f5;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&_reviews {
+
+		&--stars {
+
+			@media only screen and (min-width: 750px) {
+				float: right;
+				margin-top: -35px;
+			}
+		}
+	}
+
+	&_map {
+		@include boxshadow();
+		max-height: 500px;
+	}
+
+	&_filter {
+
+		&_block {
+			display: inline-block;
+			vertical-align: middle;
+			background: $white;
+			border: 1px solid $medium-gray;
+			padding: 4px 9px;
+			margin-bottom: 15px;
+			@include transition();
+
+			&--active {
+				background: lighten($primary-color, 40%);
+				color: $white;
+			}
+		}
+	}
+}
+
+#results_map_container {
+	display: none;
+
+	@include breakpoint(medium) {
+		display: block !important;
+	}
+}
