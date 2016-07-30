@@ -50,8 +50,6 @@ var Details = {
 	},
 
 	populateRatings: function(ratings) {
-		ratings.accessibility = 3;
-		ratings.overall = 4;
 		var highlighted = '<span><i class="fa fa-star" aria-hidden="true"></i></span>';
 		var outline = '<span><i class="fa fa-star-o" aria-hidden="true"></i></span>';
 		var overallRating = "";
