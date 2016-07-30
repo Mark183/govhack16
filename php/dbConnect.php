@@ -5,5 +5,5 @@ $mysqli = new mysqli('109.73.228.248','alperecr_govhack','Si2SXTklWhFc','alperec
 if ($mysqli->connect_error) {
     die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
-print_r($mysqli);
+
 global $mysqli;
