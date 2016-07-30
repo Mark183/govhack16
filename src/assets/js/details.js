@@ -9,13 +9,13 @@ var Details = {
 			if (!Details.place_id) {
 				window.location.replace(Config.home);
 			}
+			Details.getPlaceData(function(response) {
+				console.log(response)
+				Details.populateInfo(response.data.details[0]);
+				Details.populateRatings(response.data.ratings[0]);
+				Details.populateReviews(response.data.reviews);
+			});
 		}
-		Details.getPlaceData(function(response) {
-			console.log(response)
-			Details.populateInfo(response.data.details[0]);
-			Details.populateRatings(response.data.ratings[0]);
-			Details.populateReviews(response.data.reviews);
-		});
 	},
 
 	events: function(){
