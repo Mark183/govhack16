@@ -1,0 +1,103 @@
+.details {
+
+	&_hero {
+		background-color: $primary-color;
+		height: 250px;
+	}
+
+	&_review {
+
+		.review {
+
+			&_category {
+				margin-bottom: 15px;
+
+				@include breakpoint(large) {
+					margin-bottom: 0;
+				}
+
+				p {
+					margin-bottom: 0;
+					font-size: 14px;
+
+					@include breakpoint(large) {
+						font-size: 16px;
+					}
+				}
+
+				.fa {
+					font-size: 30px;
+					color: $dark-gray;
+					font-weight: lighter;
+
+					@include breakpoint(large) {
+						font-size: 40px;
+					}
+				}
+
+				.fa-star,
+				.fa-star-o {
+					font-size: 16px;
+				}
+
+				.fa-star {
+					color: $yellow;
+				}
+			}
+		}
+
+	}
+
+	&--slider {
+		background: $white;
+		@include boxshadow();
+		padding: 40px 0;
+	}
+
+	&_reviews {
+		background: $white;
+		@include boxshadow();
+		max-height: 400px;
+		overflow-y: scroll;
+		position: relative;
+		padding-right: 15px !important;
+
+		@include breakpoint(medium) {
+			max-height: 700px;
+		}
+
+		&--stars {
+			float: right;
+			margin-top: -30px;
+		}
+
+		&--heading {
+			padding-bottom: 0;
+		}
+	}
+
+	&_desc {
+		padding: 0px 30px 30px 15px;
+	}
+}
+
+.review {
+	&_new {
+		background: $white;
+		@include boxshadow();
+		margin-top: 28px;
+
+		&--stars {
+
+			@media only screen and (min-width: 925px) {
+				float: right;
+				margin-top: -25px;
+			}
+		}
+
+		textarea {
+			margin-top: 10px;
+			height: 100px;
+		}
+	}
+}
