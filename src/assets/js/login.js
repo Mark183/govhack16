@@ -1,6 +1,6 @@
 var Login = {
 	init: function(){
-		console.log('test')
+		console.log('tesqs')
 		Login.events();
 	},
 
