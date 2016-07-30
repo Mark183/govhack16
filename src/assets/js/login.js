@@ -1,11 +1,10 @@
 var Login = {
 	init: function(){
-		console.log('tesqs')
 		Login.events();
 	},
 
 	events: function(){
-		$('body').on('click', '.button--main', Login.getParams);
+		$('body').on('click', '#login--button', Login.getParams);
 	},
 
 	getParams: function(){
