@@ -1,81 +1,49 @@
 {{> navigation}}
 
-<div class="details_hero"></div>
 
+<div class="details_hero"></div>
 {{> searchbar}}
 
 <section class="section--padding">
     <div class="row">
-        <div class="small-12 columns text-center">
-            <div class="details_main-stars">
-                <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-                <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-                <span><i class="fa fa-star-o" aria-hidden="true"></i></span> 
-            </div>
-        	
-            <h1>SKATE PARK</h1>
-            <h5 class="font--sans">123 Street Address, Upper Coomera 4209</h5>
+        <div id="overallRating" class="small-12 columns text-center">
+            <h1 id="placeTitle">SKATE PARK</h1>
+            <h5 class="font--sans" id="placeAddress">123 Street Address, Upper Coomera 4209</h5>
         </div>
     </div>
 </section>
 
 <section class="section--padding-small details_review">
     <div class="row">
-        <div class="small-6 medium-4 large-2 columns text-center review_category">
+        <div id="lightingRating" class="small-6 medium-4 large-2 columns text-center review_category">
         	<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
         	<p>LIGHTING</p>
-        	<span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+        	
         </div>
-        <div class="small-6 medium-4 large-2 columns text-center review_category">
+        <div id="cleanlinessRating" class="small-6 medium-4 large-2 columns text-center review_category">
         	<i class="fa fa-leaf" aria-hidden="true"></i>
         	<p>CLEANLINESS</p>
-        	<span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+        	
         </div>
-        <div class="small-6 medium-4 large-2 columns text-center review_category">
+        <div id="accessibilityRating" class="small-6 medium-4 large-2 columns text-center review_category">
         	<i class="fa fa-wheelchair" aria-hidden="true"></i>
         	<p>ACCESSIBILITY</p>
-        	<span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+        	
         </div>
-        <div class="small-6 medium-4 large-2 columns text-center review_category">
+        <div id="condRating" class="small-6 medium-4 large-2 columns text-center review_category">
         	<i class="fa fa-wrench" aria-hidden="true"></i>
         	<p>CONDITION</p>
-        	<span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+        	
         </div>
-        <div class="small-6 medium-4 large-2 columns text-center review_category">
+        <div id="family_friendlyRating" class="small-6 medium-4 large-2 columns text-center review_category">
         	<i class="fa fa-child" aria-hidden="true"></i>
         	<p>FAMILY FRIENDLY</p>
-        	<span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+        	
         </div>
-        <div class="small-6 medium-4 large-2 columns text-center review_category">
+        <div id="safetyRating" class="small-6 medium-4 large-2 columns text-center review_category">
         	<i class="fa fa-lock" aria-hidden="true"></i>
         	<p>SAFETY</p>
-        	<span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+        	
         </div>
     </div>
 </section>
@@ -111,7 +79,7 @@
     <div class="row">
     	<div class="small-12 medium-6 columns details_desc">
     		<h4>DESCRIPTION</h4>
-    		<p class="latest_reviews--comments">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+    		<p class="latest_reviews--comments" id="placeDescription">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
     		<div class="review_new">
     			<div class="latest_reviews--item">
     				<h4>LEAVE A REVIEW</h4>
@@ -188,116 +156,9 @@
         		<div class="latest_reviews--item details_reviews--heading">
 	                <h4>REVIEWS</h4>
 	            </div>
-	            <div class="latest_reviews--item">
-	                <div class="latest_reviews--block">
-	                    <h5>DANIEL FARMER</h5>
-	                    <div class="details_reviews--stars">
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                </div>
-	                    <p class="caps margin-t-20">Bathroom</p>
-	                    <p>123 Street Address, Surfers Paradise 4218</p>
-	                    <p class="latest_reviews--comments">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-	                </div>
-	            </div>
-	            <div class="latest_reviews--item">
-	                <div class="latest_reviews--block">
-	                    <h5>DANIEL FARMER</h5>
-	                    <div class="details_reviews--stars">
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                </div>
-	                    <p class="caps margin-t-20">Bathroom</p>
-	                    <p>123 Street Address, Surfers Paradise 4218</p>
-	                    <p class="latest_reviews--comments">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-	                </div>
-	            </div>
-				<div class="latest_reviews--item">
-	                <div class="latest_reviews--block">
-	                    <h5>DANIEL FARMER</h5>
-	                    <div class="details_reviews--stars">
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                </div>
-	                    <p class="caps margin-t-20">Bathroom</p>
-	                    <p>123 Street Address, Surfers Paradise 4218</p>
-	                    <p class="latest_reviews--comments">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-	                </div>
-	                
-	            </div>
-	            <div class="latest_reviews--item">
-	                <div class="latest_reviews--block">
-	                    <h5>DANIEL FARMER</h5>
-	                    <div class="details_reviews--stars">
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                </div>
-	                    <p class="caps margin-t-20">Bathroom</p>
-	                    <p>123 Street Address, Surfers Paradise 4218</p>
-	                    <p class="latest_reviews--comments">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-	                </div>
-	                
-	            </div>
-	            <div class="latest_reviews--item">
-	                <div class="latest_reviews--block">
-	                    <h5>DANIEL FARMER</h5>
-	                    <div class="details_reviews--stars">
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                </div>
-	                    <p class="caps margin-t-20">Bathroom</p>
-	                    <p>123 Street Address, Surfers Paradise 4218</p>
-	                    <p class="latest_reviews--comments">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-	                </div>
-	                
-	            </div>
-	            <div class="latest_reviews--item">
-	                <div class="latest_reviews--block">
-	                    <h5>DANIEL FARMER</h5>
-	                    <div class="details_reviews--stars">
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                </div>
-	                    <p class="caps margin-t-20">Bathroom</p>
-	                    <p>123 Street Address, Surfers Paradise 4218</p>
-	                    <p class="latest_reviews--comments">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-	                </div>
-	                
-	            </div>
-	            <div class="latest_reviews--item">
-	                <div class="latest_reviews--block">
-	                    <h5>DANIEL FARMER</h5>
-	                    <div class="details_reviews--stars">
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-		                </div>
-	                    <p class="caps margin-t-20">Bathroom</p>
-	                    <p>123 Street Address, Surfers Paradise 4218</p>
-	                    <p class="latest_reviews--comments">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-	                </div>
-	        	</div>
-            </div>
+	            <div id="noReviews">
+                    <p>Be the first to write a review!</p>
+                </div>
         </div>
     </div>
 </section>
