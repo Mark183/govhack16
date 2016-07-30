@@ -10,7 +10,7 @@ var Common = {
 			if(response.success) {
 				$('.menu').css('display', 'none');
 				$('.welcome').css('display', 'block');
-				$('.welcome #user_name').text(response.data.fname);
+				$('.welcome #user_name').text(response.data.fName);
 			} else {
 				$('.menu').css('display', 'block');
 				$('.welcome').css('display', 'none');
