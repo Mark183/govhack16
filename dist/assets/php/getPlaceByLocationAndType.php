@@ -32,13 +32,15 @@ if (empty($_GET['location'])) {
 	  ") AS distance, " .
 	  "lat, " .
 	  "lng, " .
+	  "name, " .
+	  "description, " .
 	  "category " .
 	"FROM places " .
 	"HAVING distance < $miles " .
 	"AND category = '$category' " .
 	"ORDER BY distance ";
 
-	// $out = customQuery($query);
+	$out = customQuery($query);
 
-	format_response( true, true, $query);
+	format_response( true, true, $out);
 }

@@ -44,7 +44,7 @@ var Details = {
 	},
 
 	populateInfo: function(details) {
-		$('h1#placeTitle').text(Strings[details.category]);
+		$('h1#placeTitle').text(Strings.details_page[details.category]);
 		$('h5#placeAddress').text(details.name);
 		$('.latest_reviews--comments#placeDescription').text(details.description);
 	},
@@ -112,7 +112,7 @@ var Details = {
 			 		count++;
 			 	}
 			 	html = html.replace('{{{stars}}}',overallRating);
-			 	html = html.replace('{{{placeCategory}}}',Strings[review.category]);
+			 	html = html.replace('{{{placeCategory}}}',Strings.details_page[review.category]);
 			 	html = html.replace('{{{placeName}}}',review.name);
 			 	if (review.comment && review.comment != '') {
 			 		html = html.replace('{{{comment}}}',review.comment);

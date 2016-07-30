@@ -99,4 +99,8 @@
 	@include breakpoint(medium) {
 		display: block !important;
 	}
+
+	#results_map {
+		height: 100%;
+	}
 }

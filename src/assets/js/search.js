@@ -19,9 +19,7 @@ var Search = {
 			category = 'bus_stop';
 		}
 
-		Config.ajax('getPlaceByLocationAndType.php', {location: location, category: category}, function(response){
-			console.log(response.data)
-		});
+		window.location.href = Config.home+"results.html?location="+location+"&category="+category;
 	}
 };
 
