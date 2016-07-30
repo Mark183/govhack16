@@ -114,8 +114,8 @@ var Details = {
 			 	html = html.replace('{{{stars}}}',overallRating);
 			 	html = html.replace('{{{placeCategory}}}',Strings.details_page[review.category]);
 			 	html = html.replace('{{{placeName}}}',review.name);
-			 	if (review.comment && review.comment != '') {
-			 		html = html.replace('{{{comment}}}',review.comment);
+			 	if (review.text && review.text != '') {
+			 		html = html.replace('{{{comment}}}',review.text);
 			 	} else {
 			 		html = html.replace('{{{comment}}}','This reviewer did not leave a comment.');
 			 	}

@@ -14,7 +14,7 @@ if (empty($_GET['place_id'])) {
 
 	$data['details'] = customQuery($query);
 
-	$query = "SELECT * FROM reviews, users, places WHERE place_id = $place_id AND reviews.user_id = users.ID AND reviews.place_id = places.ID LIMIT 0,10"; 
+	$query = "SELECT * FROM reviews, users, places WHERE place_id = $place_id AND reviews.user_id = users.ID AND reviews.place_id = places.ID ORDER BY reviews.ID DESC LIMIT 0,10"; 
 
 	$data['reviews'] = customQuery($query);
 
