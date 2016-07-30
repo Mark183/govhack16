@@ -15,10 +15,6 @@ if (empty($_GET['lat']) || empty($_GET['lng']) || empty($_GET['distance'])) {
 	
 	$miles = $distance * 0.621371;
 
-	$lat = -28.0167;
-
-	$lng = 153.4;
-
 	$query = "SELECT " .
 	  "id, ( " .
 	    "3959 * acos ( " .
@@ -33,9 +29,7 @@ if (empty($_GET['lat']) || empty($_GET['lng']) || empty($_GET['distance'])) {
 	  "lng " .
 	"FROM places " .
 	"HAVING distance < $miles " .
-	"ORDER BY distance " .
-	"LIMIT 0 , 100;";
-
+	"ORDER BY distance ";
 	$out = customQuery($query);
 
 	format_response(true, true, $out);

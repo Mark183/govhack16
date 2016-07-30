@@ -16,7 +16,7 @@ $lat = -28.0167;
 
 $lng = 153.4;
 
-$query = "SELECT * FROM places ";
+$query = "SELECT * FROM places WHERE category = 'bus_stop'";
 
 $out = customQuery($query);
 
