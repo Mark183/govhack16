@@ -72,6 +72,11 @@ var Review = {
 
 		Config.ajax('addReview.php', data, function(response){
 			console.log(response)
+			if(response.success){
+				window.location.replace(Config.home + "details.html?place_id=" + Details.place_id);
+			}else{
+				alert(response.message);
+			}
 		});
 	}
 };

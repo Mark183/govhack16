@@ -1,6 +1,6 @@
 var Config = {};
 
-Config.home = 'http://' + location.host + '/';
+Config.home = location.protocol + '//' + location.host + '/';
 Config.ajaxUrl = Config.home + 'assets/php/';
 
 Config.ajax = function(url, data, callback){
