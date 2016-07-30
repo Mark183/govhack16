@@ -30,7 +30,7 @@ var Login = {
 		Config.ajax('login.php', {email: email, password: password}, function(response){
 			callback(response);
 		});
-	}
+	},
 
 	loginError: function(message){
 		alert(message);
