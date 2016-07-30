@@ -10,7 +10,7 @@
 		$cleaning = !empty($_GET['cleaning']) && $_GET['cleaning'] != false ? (int)$_GET['cleaning'] : false;
 		$accessibility = !empty($_GET['accessibility']) && $_GET['accessibility'] != false ? (int)$_GET['accessibility'] : false;
 		$condition = !empty($_GET['condition']) && $_GET['condition'] != false ? (int)$_GET['condition'] : false;
-		$familyFriendly = !empty($_GET['familyFriendly']) && $GET['familyFriendly'] != false ? (int)$_GET['familyFriendly'] : false;
+		$familyFriendly = !empty($_GET['familyFriendly']) && $_GET['familyFriendly'] != false ? (int)$_GET['familyFriendly'] : false;
 		$safety = !empty($_GET['safety']) && $_GET['safety'] != false ? (int)$_GET['safety'] : false;
 
 		if($place_id){
