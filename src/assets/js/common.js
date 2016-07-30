@@ -4,9 +4,12 @@ var Common = {
 		Common.getUserDetails();
 	},
 
+	events: function() {
+		$('body').on('click', '#logout--button', Common.logoutUser);
+	},
+
 	getUserDetails: function() {
 		Config.ajax('getUser.php', {}, function(response){
-			console.log(response);
 			if(response.success) {
 				$('.menu').css('display', 'none');
 				$('.welcome').css('display', 'block');
@@ -16,6 +19,15 @@ var Common = {
 				$('.welcome').css('display', 'none');
 
 			}
+		});
+	},
+
+	logoutUser: function() {
+		Config.ajax('logout.php', {}, function(response) {
+			window.location.replace(Config.home);
+
+			$('.menu').css('display', 'block');
+			$('.welcome').css('display', 'none');
 		});
 	}
 };

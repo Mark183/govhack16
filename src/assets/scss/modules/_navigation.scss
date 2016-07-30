@@ -15,6 +15,10 @@
 		font-family: $header-font-family;
 		color: $dark-gray;
 		display: none;
+
+		.logout {
+			margin-left: 40px;
+		}
 	}
 	
 	&-center {
