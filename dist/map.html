@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Foundation for Sites</title>
+        <link rel="stylesheet" href="assets/css/app.css">
+    </head>
+    <body>
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>THE MAP YOOOOOO</title>
+            <meta name="viewport" content="initial-scale=1.0">
+            <meta charset="utf-8">
+            <style>
+              html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+              }
+              #map {
+                height: 100%;
+              }
+            </style>
+          </head>
+          <body>
+            <div id="map"></div>
+            <script>
+              var map;
+        
+              function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: -29.0167, lng: 153.4},
+                  zoom: 8
+                });
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude,
+                      distance: 50
+                    };
+                    console.log('ass')
+                    map.setCenter(pos)
+                    Config.ajax('getPlacesByLocation.php', pos, function(response){
+                        $.each(response.data, function(i, v){
+                          var myLatLng = {lat: parseFloat(v.lat), lng: parseFloat(v.lng)};
+                          var marker = new google.maps.Marker({
+                            position: myLatLng,
+                            map: map,
+                            title: v.name
+                          });
+                        })
+                    });
+                  }, function() {
+                    console.log('whatever');
+                  });
+                }
+        
+              }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmWfIzi9mtnRCYodUEGE22iyZIwX8JoNU&callback=initMap"
+            async defer></script>
+          </body>
+        </html>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>
