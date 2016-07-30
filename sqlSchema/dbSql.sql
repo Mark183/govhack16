@@ -24,6 +24,24 @@ CREATE TABLE places (
 	PRIMARY KEY (id)
 );
 
+CREATE TABLE reviews (
+	id INT NOT NULL AUTO_INCREMENT,
+	text VARCHAR(2000),
+	timestamp INT(15),
+	overall FLOAT(4),
+	lighting FLOAT(4),
+	cleanliness FLOAT(4),
+	accessibility FLOAT(4),
+	cond FLOAT(4),
+	family_friendly FLOAT(4),
+	safety FLOAT(4),
+	user_id INT(10),
+	place_id INT(15),
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+	FOREIGN KEY (place_id) REFERENCES places(id) ON DELETE CASCADE
+);
+
 CREATE TABLE comments (
 	id INT NOT NULL AUTO_INCREMENT,
 	text VARCHAR(2000),
