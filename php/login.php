@@ -1,11 +1,6 @@
 <?php
 	include_once "common.php";
 
-
-	// $options = array('cost' => 11);
-	// echo password_hash('password', PASSWORD_BCRYPT, $options);
-
-
 	$email = !empty($_GET['email']) ? $_GET['email'] : false;
 	$password = !empty($_GET['password']) ? $_GET['password'] : false;
 	$hash = !empty($_GET['hash']) ? $_GET['hash'] : false;
@@ -19,12 +14,13 @@
 		}
 
 	}else{
-		$userData = checkLogin($email, $password);
-		if(!$userData){
+		$user = checkLogin($email, $password);
+		if(!$user){
 			format_response(false, 'incorrect email or password');
+
 		}else{
-			$_SESSION["user"] = $userData;
-			format_response(true, 'user logged in', $userData);
+			$_SESSION["user"] = $user;
+			format_response(true, 'user logged in', $user);
 			
 		}
 	}
@@ -33,81 +29,13 @@
 	function checkLogin($email, $password){
 
 		$user = getSingleRow('users', 'email', $email);
-		print_r($user);
 
-		// $typeArr = array();
+		if (password_verify($password, $user['password'])) {
+			unset($user['password']);
 
-		// global $mysqli;
-		// $sql = "SELECT u.id, u.email, u.username, u.fName, u.lName, u.password, u.hasLoggedIn, r.type FROM users u INNER JOIN roles r ON u.id = r.id WHERE username = ?";
-		// $result = $mysqli->prepare($sql);
-		// $result->bind_param('s', $username);
-		// $result->execute();
+		}else{
+			$user = false;
+		}
 
-		// $result->store_result();
-		// if($result->num_rows > 0) {
-		// 	$result->bind_result($id, $email, $username, $fName, $lName, $hash, $hasLoggedIn, $type);
-
-		// 	while($result->fetch())
-		// 	{	
-		// 		if (password_verify($password, $hash)) {
-		// 			$typeArr[] = $type;
-		// 	    	$userData = array('id'=>$id, 'email'=>$email, 'username'=>$username, 'fName'=>$fName, 'lName'=>$lName, 'hasLoggedIn'=>$hasLoggedIn);
-
-		// 		} else {
-		// 		    $userData = false;
-		// 		}
-		// 	}
-		// }else{
-		// 	$userData = false;
-		// }
-
-		// $result->close();
-
-		// if($userData){
-		// 	$userData['type'] = $typeArr;
-		// }
-
-		// return $userData;
+		return $user;
 	}
-
-
-
-
-
-
-
-	// function checkLogin($username, $password){
-	// 	$typeArr = array();
-
-	// 	global $mysqli;
-	// 	$sql = "SELECT u.id, u.email, u.username, u.fName, u.lName, u.password, u.hasLoggedIn, r.type FROM users u INNER JOIN roles r ON u.id = r.id WHERE username = ?";
-	// 	$result = $mysqli->prepare($sql);
-	// 	$result->bind_param('s', $username);
-	// 	$result->execute();
-
-	// 	$result->store_result();
-	// 	if($result->num_rows > 0) {
-	// 		$result->bind_result($id, $email, $username, $fName, $lName, $hash, $hasLoggedIn, $type);
-
-	// 		while($result->fetch())
-	// 		{	
-	// 			if (password_verify($password, $hash)) {
-	// 				$typeArr[] = $type;
-	// 		    	$userData = array('id'=>$id, 'email'=>$email, 'username'=>$username, 'fName'=>$fName, 'lName'=>$lName, 'hasLoggedIn'=>$hasLoggedIn);
-
-	// 			} else {
-	// 			    $userData = false;
-	// 			}
-	// 		}
-	// 	}else{
-	// 		$userData = false;
-	// 	}
-
-	// 	$result->close();
-
-	// 	if($userData){
-	// 		$userData['type'] = $typeArr;
-	// 	}
-
-	// 	return $userData;
-	// }
