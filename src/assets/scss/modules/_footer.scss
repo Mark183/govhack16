@@ -1,0 +1,18 @@
+.footer {
+	background: #333333;
+	color: $white;
+	padding: 20px 0;
+
+	&--logo {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+		font-size: 18px;
+	}
+
+	&--text {
+		font-family: $header-font-family;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}

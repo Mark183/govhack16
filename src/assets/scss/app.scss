@@ -5,6 +5,7 @@
 @import 'motion-ui';
 
 @import "global/base";
+@import "global/mixins";
 @import "font-awesome/font-awesome";
 
 @include foundation-global-styles;
@@ -53,8 +54,10 @@
 @include motion-ui-animations;
 
 @import "modules/navigation";
+@import "modules/footer";
 
 @import "pages/login";
+@import "pages/home";
 
 @import "components/typography";
 @import "components/buttons";

@@ -1,2 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script|Lato:400,300,700,900);
 
+p {
+	letter-spacing: 1px;
+}
+
+.text {
+
+	&--white {
+		color: $white;
+	}
+}
+
+.font {
+
+	&--sans {
+		font-family: $body-font-family;
+		letter-spacing: 1px;
+	}
+}

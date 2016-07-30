@@ -5,3 +5,48 @@ a {
 body {
 	background: $light-gray !important;
 }
+
+.section {
+
+	&--negative {
+		margin-top: -50px;
+		z-index: 10;
+		position: relative;
+	}
+
+	&--padding {
+		padding-top: 40px;
+
+		@include breakpoint(medium) {
+			padding-top: 80px;
+		}
+	}
+
+	&--bottom {
+		padding-bottom: 40px;
+
+		@include breakpoint(medium) {
+			padding-top: 80px;
+		}
+	}
+}
+
+.background {
+
+	&--primary {
+		background-color: $primary-color;
+	}
+
+	&--search {
+		background-color: lighten($primary-color, 40%);
+	}
+}
+
+.fa-star {
+
+	color: $yellow;
+}
+
+.caps {
+	text-transform: uppercase;
+}
