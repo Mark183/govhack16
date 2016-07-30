@@ -123,18 +123,17 @@
 
 	function insertRow($table, $fieldNames, $values){
 		global $mysqli;
-		$userId = $_SESSION['user']['id'];
 
 		$sql = "INSERT INTO $table ($fieldNames) 
 				VALUES($values)";
-				error_log($sql);
+				// error_log($sql);
 		if (!$result = $mysqli->query($sql)) {
 
 			printf("Errormessage 1 : %s\n", $mysqli->error);
 			return false;
 
 		} else {
-			return true;
+			return $mysqli->insert_id;
 		}
 	}
 
