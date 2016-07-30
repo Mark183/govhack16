@@ -2,6 +2,7 @@ var Common = {
 
 	init: function() {
 		Common.getUserDetails();
+		Common.events();
 	},
 
 	events: function() {
