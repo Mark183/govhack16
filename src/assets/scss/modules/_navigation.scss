@@ -10,6 +10,12 @@
 		color: $dark-gray;
 		font-family: $header-font-family;
 	}
+
+	.welcome {
+		font-family: $header-font-family;
+		color: $dark-gray;
+		display: none;
+	}
 	
 	&-center {
 		text-align: left;
