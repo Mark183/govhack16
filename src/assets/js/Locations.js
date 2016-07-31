@@ -7,7 +7,7 @@ var Locations = {
 	"Brisbane": {
 		"lat": -27.470959, 
 		"lng": 153.025308,
-		"distance": 40},
+		"distance": 30},
 	"Sunshine Coast": {
 		"lat": -26.5,
 		"lng": 153,
@@ -15,6 +15,6 @@ var Locations = {
 	"Logan": {
 		"lat": -27.683054,
 		"lng": 153.189438,
-		"distance": 40
+		"distance": 15
 	}
 }

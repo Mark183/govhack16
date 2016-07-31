@@ -37,7 +37,7 @@ if (empty($_GET['location'])) {
 			"GROUP BY places.id " .
 			"HAVING distance < $miles " .
 			"ORDER BY overall DESC " . 
-			"LIMIT 0, 20";
+			"LIMIT 0, 250";
 
 	$out = customQuery($query);
 

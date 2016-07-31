@@ -33,7 +33,7 @@ var Results = {
 	initMap: function() {
 		Results.map = new google.maps.Map(document.getElementById('theMap'), {
           center: {lat: Locations[Results.location].lat, lng: Locations[Results.location].lng},
-          zoom: 10
+          zoom: 14
         });
         Results.getResults(function(response) {
 			Results.populatePlaces(response.data);
