@@ -8,14 +8,14 @@ $locations = array(
 	"Brisbane" => array(
 		"lat" => -27.470959, 
 		"lng" => 153.025308,
-		"distance" => 50),
+		"distance" => 40),
 	"Sunshine Coast" => array(
 		"lat" => -26.5,
 		"lng" => 153,
-		"distance" => 50),
+		"distance" => 40),
 	"Logan" => array (
 		"lat" => -27.683054,
 		"lng" => 153.189438,
-		"distance" => 50));
+		"distance" => 40));
 
 global $locations;
