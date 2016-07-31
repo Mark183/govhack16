@@ -37,8 +37,17 @@
         
         <div class="results_hero"></div>
         
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmWfIzi9mtnRCYodUEGE22iyZIwX8JoNU&callback=Results.initMap"
+        <script>
+        	function initMap() {
+        		setTimeout(function()	 {
+        			Results.initMap();
+        		},500)
+        	}
+        </script>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmWfIzi9mtnRCYodUEGE22iyZIwX8JoNU&callback=initMap"
             async defer></script>
+        
         
         
         <section class="section--negative">

@@ -2,6 +2,7 @@ var Results = {
 	location: '',
 
 	category: '',
+	map: null,
 
 	init: function() {
 		if (window.location.href.includes('results')) {
@@ -17,9 +18,6 @@ var Results = {
 			if (!Results.location && !Results.category) {
 				window.location.replace(Config.home);
 			}
-			Results.getResults(function(response) {
-				Results.populatePlaces(response.data);
-			});
 		}
 	},
 
@@ -33,11 +31,13 @@ var Results = {
 	},
 
 	initMap: function() {
-		var map;
-		map = new google.maps.Map(document.getElementById('theMap'), {
-          center: {lat: -29.0167, lng: 153.4},
+		Results.map = new google.maps.Map(document.getElementById('theMap'), {
+          center: {lat: Locations[Results.location].lat, lng: Locations[Results.location].lng},
           zoom: 10
         });
+        Results.getResults(function(response) {
+			Results.populatePlaces(response.data);
+		});
 	},
 
 	getResults: function(callback) {
@@ -83,7 +83,25 @@ var Results = {
 			 	html = html.replace('{{{placeCategory}}}',Strings.details_page[place.category]);
 			 	html = html.replace('{{{placeName}}}',place.name);
 				$('.results_list').append(html);
+				 var myLatLng = {lat: parseFloat(place.lat), lng: parseFloat(place.lng)};
+	             var marker = new google.maps.Marker({
+	                position: myLatLng,
+	                map: Results.map,
+	                title: place.name,
+	                icon: Config.home+"assets/img/map-marker.png",
+	                animation: google.maps.Animation.DROP
+	              });
 			})
+			var cityCircle = new google.maps.Circle({
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.35,
+              map: Results.map,
+              center: {lat: Locations[Results.location].lat, lng: Locations[Results.location].lng},
+              radius: Locations[Results.location].distance * 1000
+            });
 		}
 	},
 
