@@ -32,7 +32,9 @@ var Login = {
 	},
 
 	loginError: function(message){
-		alert(message);
+		// alert(message);
+		$('#modal').foundation('open');
+		$('#modalText').text(message);
 	}
 };
 
