@@ -41,7 +41,8 @@ var Signup = {
 	},
 
 	signupError: function(message){
-		alert(message);
+		$('#modal').foundation('open');
+		$('#modalText').text(message);
 	}
 };
 

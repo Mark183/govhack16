@@ -75,7 +75,8 @@ var Review = {
 			if(response.success){
 				window.location.replace(Config.home + "details.html?place_id=" + Details.place_id);
 			}else{
-				alert(response.message);
+				$('#modal').foundation('open');
+				$('#modalText').text(message);
 			}
 		});
 	}
