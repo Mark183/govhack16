@@ -4,8 +4,8 @@ var View = {
 	},
 
 	events: function(){
-		$('body').on('click', '#list_view', View.showListView);
-		$('body').on('click', '#map_view', View.showMapView);
+		$('body').on('click touch', '#list_view', View.showListView);
+		$('body').on('click touch', '#map_view', View.showMapView);
 	},
 
 	showListView: function() {

@@ -4,7 +4,7 @@ var Login = {
 	},
 
 	events: function(){
-		$('body').on('click', '#login--button', Login.getParams);
+		$('body').on('click touch', '#login--button', Login.getParams);
 	},
 
 	getParams: function(){

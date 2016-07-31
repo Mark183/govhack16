@@ -13,8 +13,8 @@ var Review = {
 	},
 
 	events: function(){
-		$('body').on('click', '.review_new .review_new--stars span', Review.addStars);
-		$('body').on('click', '.review_new #review_button', Review.submitReview);
+		$('body').on('click touch', '.review_new .review_new--stars span', Review.addStars);
+		$('body').on('click touch', '.review_new #review_button', Review.submitReview);
 	},
 
 	addStars: function(){

@@ -6,7 +6,7 @@ var Common = {
 	},
 
 	events: function() {
-		$('body').on('click', '.welcome #logout--button', Common.logoutUser);
+		$('body').on('click touch', '.welcome #logout--button', Common.logoutUser);
 	},
 
 	getUserDetails: function() {

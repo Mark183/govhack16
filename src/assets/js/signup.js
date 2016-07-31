@@ -4,7 +4,7 @@ var Signup = {
 	},
 
 	events: function(){
-		$('body').on('click', '#signup--button', Signup.getParams);
+		$('body').on('click touch', '#signup--button', Signup.getParams);
 	},
 
 	getParams: function(){

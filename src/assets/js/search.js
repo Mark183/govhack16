@@ -4,7 +4,7 @@ var Search = {
 	},
 
 	events: function(){
-		$('body').on('click', '.search_input .button--main', Search.getParams);
+		$('body').on('click touch', '.search_input .button--main', Search.getParams);
 	},
 
 	getParams: function() {
