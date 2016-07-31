@@ -38,8 +38,9 @@ var Details = {
 	},
 
 	getPlaceData: function(callback) {
-		Config.ajax('getPlaceById.php',{place_id:Details.place_id}, function(response) {
-			callback(response)
+		//comment
+		Config.ajax('getPlaceByID.php', { place_id: Details.place_id}, function(response) {
+			callback(response);
 		})
 	},
 
