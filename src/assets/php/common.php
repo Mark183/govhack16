@@ -162,7 +162,7 @@
 		if(isset($_SESSION['user'])){
 			return true;
 		}else{
-			format_response(false, 'loggedOut');
+			format_response(false, 'User not logged in');
 			die();
 		}
 	}

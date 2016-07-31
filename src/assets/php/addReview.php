@@ -14,46 +14,53 @@
 		$safety = !empty($_GET['safety']) && $_GET['safety'] != false ? (int)$_GET['safety'] : false;
 
 		if($place_id){
+			$userId = $_SESSION['user']['id'];
+			$sql = "SELECT * FROM reviews WHERE place_id = '$place_id' AND user_id = '$userId'";
+			$exists = customQuery($sql);
 
-			if(!$comment && !$lighting && !$cleaning && !$accessibility && !$condition && !$familyFriendly && !$safety){
-				format_response(false, 'no review given');
+			if(!$exists){
+				if(!$comment && !$lighting && !$cleaning && !$accessibility && !$condition && !$familyFriendly && !$safety){
+					format_response(false, 'no review given');
 
+				}else{
+					//only comment given
+					if(!$lighting && !$cleaning && !$accessibility && !$condition && !$familyFriendly && !$safety){
+						$overall = false;
+
+						$lighting = !$lighting ? "NULL" : $lighting;
+						$cleaning = !$cleaning ? "NULL" : $cleaning;
+						$accessibility = !$accessibility ? "NULL" : $accessibility;
+						$condition = !$condition ? "NULL" : $condition;
+						$familyFriendly = !$familyFriendly ? "NULL" : $familyFriendly;
+						$safety = !$safety ? "NULL" : $safety;
+
+					}else{
+						$overall = calcOverall($lighting, $cleaning, $accessibility, $condition, $familyFriendly, $safety);
+
+						$lighting = !$lighting ? "NULL" : $lighting;
+						$cleaning = !$cleaning ? "NULL" : $cleaning;
+						$accessibility = !$accessibility ? "NULL" : $accessibility;
+						$condition = !$condition ? "NULL" : $condition;
+						$familyFriendly = !$familyFriendly ? "NULL" : $familyFriendly;
+						$safety = !$safety ? "NULL" : $safety;
+					}
+						
+					$added = addReview($comment, $overall, $lighting, $cleaning, $accessibility, $condition, $familyFriendly, $safety, $place_id);
+					if($added){
+						format_response(true, 'review complete');
+					}else{
+						format_response(false, 'issue adding review');
+					}
+				}
 			}else{
-				//only comment given
-				if(!$lighting && !$cleaning && !$accessibility && !$condition && !$familyFriendly && !$safety){
-					$overall = false;
-
-					$lighting = !$lighting ? "NULL" : $lighting;
-					$cleaning = !$cleaning ? "NULL" : $cleaning;
-					$accessibility = !$accessibility ? "NULL" : $accessibility;
-					$condition = !$condition ? "NULL" : $condition;
-					$familyFriendly = !$familyFriendly ? "NULL" : $familyFriendly;
-					$safety = !$safety ? "NULL" : $safety;
-
-				}else{
-					$overall = calcOverall($lighting, $cleaning, $accessibility, $condition, $familyFriendly, $safety);
-
-					$lighting = !$lighting ? "NULL" : $lighting;
-					$cleaning = !$cleaning ? "NULL" : $cleaning;
-					$accessibility = !$accessibility ? "NULL" : $accessibility;
-					$condition = !$condition ? "NULL" : $condition;
-					$familyFriendly = !$familyFriendly ? "NULL" : $familyFriendly;
-					$safety = !$safety ? "NULL" : $safety;
-				}
-					
-				$added = addReview($comment, $overall, $lighting, $cleaning, $accessibility, $condition, $familyFriendly, $safety, $place_id);
-				if($added){
-					format_response(true, 'review complete');
-				}else{
-					format_response(false, 'issue adding review');
-				}
+				format_response(false, 'User already reviewed this');
 			}
 		}else{
-			format_response(false, 'no place id');
+			format_response(false, 'Missing place ID');
 		}
 
 	}else{
-		format_response(false, 'not logged in');
+		format_response(false, 'User not logged in'); //gets call in common no here
 	}
 
 	function calcOverall($lighting, $cleaning, $accessibility, $condition, $familyFriendly, $safety){
