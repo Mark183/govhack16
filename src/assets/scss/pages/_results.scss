@@ -37,6 +37,7 @@
 
 		.latest_reviews--block {
 			width: 100%;
+			max-width: 100%;
 		}
 
 		.latest_reviews--item {
@@ -62,7 +63,7 @@
 
 		&--stars {
 
-			@media only screen and (min-width: 750px) {
+			@media only screen and (min-width: 925px) {
 				float: right;
 				margin-top: -35px;
 			}
