@@ -20,25 +20,13 @@ if (empty($_GET['location'])) {
 
 	$miles = $distance * 0.621371;
 
-	$query = "SELECT " .
-	  "id, ( " .
-	    "3959 * acos ( " .
-	      "cos ( radians($lat) ) " .
-	      "* cos( radians( lat ) ) " .
-	      "* cos( radians( lng ) - radians($lng) ) " .
-	      "+ sin ( radians($lat) ) " .
-	      "* sin( radians( lat ) ) " .
-	    ") " .
-	  ") AS distance, " .
-	  "lat, " .
-	  "lng, " .
-	  "name, " .
-	  "description, " .
-	  "category " .
-	"FROM places " .
-	"HAVING distance < $miles " .
-	"AND category = '$category' " .
-	"ORDER BY distance ";
+	$query = "SELECT AVG( reviews.overall ) AS overall, ( 3959 * ACOS( COS( RADIANS( $lat ) ) * COS( RADIANS( lat ) ) * COS( RADIANS( lng ) - RADIANS( $lng ) ) + SIN( RADIANS( $lat ) ) * SIN( RADIANS( lat ) ) ) ) AS distance, places.id, lat, lng, name, description, category " .
+			"FROM places " .
+			"LEFT OUTER JOIN reviews ON reviews.place_id = places.id " .
+			"WHERE category =  '$category' " .
+			"GROUP BY places.id " .
+			"HAVING distance < $miles " .
+			"ORDER BY overall DESC";
 
 	$out = customQuery($query);
 
