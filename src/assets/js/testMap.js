@@ -2,6 +2,7 @@ var Google = {
 
 	init: function(){
 		Google.events();
+        // Google.render_map();
 
 		var map;
 	},
@@ -180,7 +181,8 @@ var Google = {
 	};
 	
 	// create map	        	
-	map = new google.maps.Map( $el[0], args);
+	// map = new google.maps.Map( $el[0], args);
+    map = new google.maps.Map(document.getElementById('theMap'), args);
 
 	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
     map.mapTypes.set('Styled', styledMapType);
@@ -294,7 +296,5 @@ var Google = {
 };
 
 $(function(){
-    if($('#theMap').length > 0) {
-        Google.init();
-    }
+    Google.init();
 });
