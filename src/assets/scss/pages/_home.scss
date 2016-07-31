@@ -131,8 +131,12 @@
 	}
 
 	&--block {
-		display: inline-block;
-		vertical-align: middle;
+
+		@include breakpoint(medium) {
+			display: inline-block;
+			vertical-align: middle;
+			max-width: 50%;
+		}
 
 		.fa {
 			font-size: 18px;
